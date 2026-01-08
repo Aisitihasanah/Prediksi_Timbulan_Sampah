@@ -247,17 +247,21 @@ st-emotion-cache-pk3c77 p {
 @media (max-width: 768px) {
 
     .hero-container {
-        height: 280px;
+        height: auto;
+        padding: 2rem 1.5rem;
         border-radius: 16px;
         margin-bottom: 3rem;
     }
 
     .hero-text {
-        left: 20px;
-        right: 20px;
-        top: 50%;
-        transform: translateY(-50%);
+        position: relative;
+        top: auto;
+        left: auto;
+        right: auto;
+        transform: none;
+
         max-width: 100%;
+        text-align: left;
     }
 
     .hero-text h1 {
@@ -274,27 +278,13 @@ st-emotion-cache-pk3c77 p {
         font-size: 0.95rem;
     }
 
-    div[data-testid="column"] {
-        width: 100% !important;
-        flex: 1 1 100% !important;
-        max-width: 100% !important;
-    }
-
-    .card-container {
-        margin-bottom: 1.2rem;
-    }
-
-    .card-img {
-        height: 160px;
-        object-fit: cover;
-    }
-
     .result-card {
         flex-direction: column;
         align-items: flex-start;
         gap: 1rem;
     }
 }
+
 
 
 
