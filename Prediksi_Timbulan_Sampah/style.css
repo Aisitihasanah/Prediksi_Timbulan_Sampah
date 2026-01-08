@@ -6,8 +6,7 @@
     background-color: #0e3118; 
     color: #ffffff;
 }
-.body{
-    size : absolute;}
+
 h1, h2 {
     color: #ffffff !important;
 }
@@ -215,7 +214,7 @@ h1, h2 {
 }
 
 .st-b0 {
-    color: #ffffff;
+    color: #000000;
 }
 .st-emotion-cache-br351g p, .st-emotion-cache-br351g ol, .st-emotion-cache-br351g ul, .st-emotion-cache-br351g dl, .st-emotion-cache-br351g li {
     color: #ffffff;
@@ -225,26 +224,29 @@ h1, h2 {
     white-space: nowrap;
     text-overflow: ellipsis;
     display: table-cell;
-    color: black;
+    color: rgb(0, 0, 0);
+}
+.st-emotion-cache-16tyu1 p {
+    word-break: break-word;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    color: #ffffff;
 }
 @media (max-width: 768px) {
 
     .hero-container {
-        height: auto;
-        padding: 2rem 1.5rem;
+        height: 280px;
         border-radius: 16px;
         margin-bottom: 3rem;
     }
 
     .hero-text {
-        position: relative;
-        top: auto;
-        left: auto;
-        right: auto;
-        transform: none;
-
+        left: 20px;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
         max-width: 100%;
-        text-align: left;
     }
 
     .hero-text h1 {
@@ -261,12 +263,24 @@ h1, h2 {
         font-size: 0.95rem;
     }
 
+    div[data-testid="column"] {
+        width: 100% !important;
+        flex: 1 1 100% !important;
+        max-width: 100% !important;
+    }
+
+    .card-container {
+        margin-bottom: 1.2rem;
+    }
+
+    .card-img {
+        height: 160px;
+        object-fit: cover;
+    }
+
     .result-card {
         flex-direction: column;
         align-items: flex-start;
         gap: 1rem;
     }
 }
-
-
-
