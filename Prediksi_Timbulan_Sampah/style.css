@@ -274,39 +274,27 @@ st-emotion-cache-pk3c77 p {
         display: none;
     }
 
-    /* HERO TEXT */
-    .hero-text {
-        position: relative;
-        transform: none;
+      .hero-text {
+        left: 20px;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
         max-width: 100%;
-        text-align: left;
-        padding: 0;
     }
 
     .hero-text h1 {
-        font-size: 2.1rem;
-        line-height: 1.15;
-        font-weight: 900;
-        margin-bottom: 0.6rem;
+        font-size: 2rem;
+        line-height: 1.2;
     }
 
     .hero-text p {
         font-size: 0.95rem;
-        line-height: 1.6;
-        opacity: 0.9;
-        margin-bottom: 1.2rem;
     }
 
-    /* BUTTON */
     .hero-btn {
-        display: inline-block;
-        width: fit-content;
-        padding: 0.7rem 1.6rem;
+        padding: 0.7rem 1.8rem;
         font-size: 0.95rem;
-        font-weight: 800;
-        border-radius: 999px;
     }
-
     /* RESULT CARD (LAINNYA) */
     .result-card {
         flex-direction: column;
@@ -314,4 +302,5 @@ st-emotion-cache-pk3c77 p {
         gap: 1rem;
     }
 }
+
 
