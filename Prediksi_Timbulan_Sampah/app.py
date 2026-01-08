@@ -3,25 +3,26 @@ from pathlib import Path
 import base64
 
 st.set_page_config(
-    page_title="Prioritas Penanganan Sampah",
+    page_title="Hate Comment Detection",
     layout="wide",
     initial_sidebar_state="collapsed"
 )
 
-def load_css():
-    css_file = Path("style.css")
-    if css_file.exists():
-        with open(css_file) as f:
-            st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
-
-load_css()
-
-hero_image = Path("assets/hero3.png")
-
-if hero_image.exists():
-    encoded_image = base64.b64encode(hero_image.read_bytes()).decode()
-
+css_file = Path(__file__).parent / "style.css"
+if css_file.exists():
     st.markdown(
+        f"<style>{css_file.read_text()}</style>",
+        unsafe_allow_html=True
+    )
+else:
+    st.warning("style.css tidak ditemukan")
+
+BASE_DIR = Path(__file__).resolve().parent
+hero_image_path = BASE_DIR / "assets" / "hero3.jpg"
+
+if hero_image_path.exists():
+    encoded_image = base64.b64encode(hero_image_path.read_bytes()).decode()
+ st.markdown(
         f"""
         <div class="hero-container">
             <img src="data:image/jpg;base64,{encoded_image}" class="hero-img"/>
@@ -126,3 +127,4 @@ with c3:
         </div>
     """, unsafe_allow_html=True)
     
+
