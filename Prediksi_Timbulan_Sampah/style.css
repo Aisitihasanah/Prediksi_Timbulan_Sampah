@@ -244,7 +244,6 @@ st-emotion-cache-pk3c77 p {
 .st-emotion-cache-pk3c77{
     color: white;}
 
-@media (max-width: 768px) {
 
  @media (max-width: 768px) {
 
@@ -267,11 +266,6 @@ st-emotion-cache-pk3c77 p {
         object-fit: cover;
         border-radius: 14px;
         display: block;
-    }
-
-    /* MATIKAN SEMUA OVERLAY & POSITIONING */
-    .hero-overlay {
-        display: none !important;
     }
 
     .hero-text {
@@ -305,4 +299,5 @@ st-emotion-cache-pk3c77 p {
         gap: 1rem;
     }
 }
+
 
