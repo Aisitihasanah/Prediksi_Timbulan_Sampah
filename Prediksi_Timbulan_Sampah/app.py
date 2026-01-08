@@ -22,7 +22,8 @@ hero_image_path = BASE_DIR / "assets" / "hero3.jpg"
 
 if hero_image_path.exists():
     encoded_image = base64.b64encode(hero_image_path.read_bytes()).decode()
- st.markdown(
+
+    st.markdown(
         f"""
         <div class="hero-container">
             <img src="data:image/jpg;base64,{encoded_image}" class="hero-img"/>
@@ -143,5 +144,6 @@ with c3:
         </div>
     """, unsafe_allow_html=True)
     
+
 
 
