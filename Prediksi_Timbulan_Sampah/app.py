@@ -71,7 +71,7 @@ with col2:
     import os
 
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-    img_path = os.path.join(BASE_DIR, "assets", "problem2.png")
+    img_path = os.path.join(BASE_DIR, "assets", "problem.png")
 
     if os.path.exists(img_path):
         st.image(img_path, use_container_width=True)
@@ -142,6 +142,7 @@ with c3:
         </div>
     """, unsafe_allow_html=True)
     
+
 
 
 
