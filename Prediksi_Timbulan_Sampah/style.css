@@ -332,6 +332,8 @@ st-emotion-cache-pk3c77 p {
         padding: 0.6rem;
         border-radius: 14px;
     }
+     .st-emotion-cache-pk3c77 h2{
+         font-size: 1rem;}
 
     .card-img {
         height: 90px;
@@ -348,6 +350,7 @@ st-emotion-cache-pk3c77 p {
         line-height: 1.3;
     }
 }
+
 
 
 
