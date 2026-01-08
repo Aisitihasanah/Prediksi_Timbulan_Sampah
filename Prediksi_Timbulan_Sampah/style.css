@@ -301,30 +301,24 @@ st-emotion-cache-pk3c77 p {
         margin: 0 0 1.2rem 0;
     }
 
-    .hero-btn {
-        padding: 0.7rem 1.8rem;
-        font-size: 0.95rem;
-    }
+  /* HERO BUTTON (MULAI PREDIKSI) */
+.hero-btn {
+    display: inline-block;
+    padding: 0.7rem 1.8rem;
+    font-size: 0.95rem;
+    font-weight: 800;
 
-    div[data-testid="column"] {
-        width: 100% !important;
-        flex: 1 1 100% !important;
-        max-width: 100% !important;
-    }
+    background: linear-gradient(135deg, #facc15, #f59e0b);
+    color: #1f2937;
 
-    .card-container {
-        margin-bottom: 1.2rem;
-    }
+    border-radius: 999px;
+    border: none;
+    text-decoration: none;
 
-    .card-img {
-        height: 160px;
-        object-fit: cover;
-    }
+    box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+}
 
-    .result-card {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-    }
+.hero-btn:hover {
+    transform: translateY(-2px);
 }
 
