@@ -232,7 +232,7 @@ h1, h2 {
     margin-top: 0px;
     margin-left: 0px;
     margin-right: 0px;
-    color: #ffffff;
+    color: white;
 }
 @media (max-width: 768px) {
 
@@ -285,6 +285,7 @@ h1, h2 {
         gap: 1rem;
     }
 }
+
 
 
 
