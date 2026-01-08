@@ -294,7 +294,27 @@ st-emotion-cache-pk3c77 p {
         align-items: flex-start;
         gap: 1rem;
     }
+      .solution-section {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.7rem;
+    }
+
+    .solution-card {
+        padding: 1rem 0.8rem;
+    }
+
+    .solution-card h3 {
+        font-size: 0.8rem;
+        line-height: 1.2;
+    }
+
+    .solution-card p {
+        font-size: 0.7rem;
+        line-height: 1.3;
+    }
 }
+}
+
 
 
 
