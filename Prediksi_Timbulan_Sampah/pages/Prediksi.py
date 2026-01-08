@@ -3,6 +3,11 @@ import joblib
 import pandas as pd
 from pathlib import Path
 
+st.set_page_config(
+    page_title="Prediksi Prioritas Sampah",
+    layout="wide"
+)
+
 css_file = Path(__file__).parent.parent / "style.css"
 
 if css_file.exists():
@@ -13,41 +18,39 @@ if css_file.exists():
 else:
     st.warning("style.css tidak ditemukan")
 
-
 @st.cache_resource
 def load_assets():
     try:
-        BASE_DIR = Path(__file__).parent.parent
-    model = joblib.load("models/model_lr_sampah.pkl")
-    encoder = joblib.load("models/encoder_kecamatan.pkl")
-    return model, encoder
+        model = joblib.load("models/model_lr_sampah.pkl")
+        encoder = joblib.load("models/encoder_kecamatan.pkl")
+        return model, encoder
     except Exception as e:
         st.error(f"Gagal load model: {e}")
-        return None, None, None
+        return None, None
 
 model, encoder = load_assets()
-# ================= BACK BUTTON =================
-if st.button("⬅\nKembali"):
+
+if model is None or encoder is None:
+    st.stop()
+
+if st.button("⬅ Kembali"):
     st.switch_page("app.py")
 
-# ================= HEADER =================
 st.markdown(
-    '<h1 style="color:#ffb800; font-size:3rem; font-weight:800;">'
-    'Prediksi Prioritas Penanganan Sampah</h1>',
-    unsafe_allow_html=True
-)
-
-st.markdown(
-    '<p style="color:white; opacity:80%;">'
-    'Sistem ini memprediksi timbulan sampah tiap kecamatan di Kota Tasikmalaya '
-    'menggunakan metode Linear Regression untuk menentukan prioritas penanganan.'
-    '</p>',
+    """
+    <h1 style="color:#ffb800; font-size:3rem; font-weight:800;">
+        Prediksi Prioritas Penanganan Sampah
+    </h1>
+    <p style="color:white; opacity:0.85;">
+        Sistem ini memprediksi timbulan sampah tiap kecamatan di Kota Tasikmalaya
+        menggunakan metode <b>Linear Regression</b> untuk menentukan prioritas penanganan.
+    </p>
+    """,
     unsafe_allow_html=True
 )
 
 st.markdown('<div class="scanner-container">', unsafe_allow_html=True)
 
-# ================= INPUT =================
 st.markdown(
     '<p style="color:white; font-weight:600;">Masukkan Parameter Prediksi:</p>',
     unsafe_allow_html=True
@@ -69,12 +72,11 @@ with col2:
         encoder.classes_
     )
 
-# ================= PREDIKSI =================
 if st.button("📊 Prediksi Sekarang"):
 
     hasil = []
 
-    for kec, enc in zip(encoder.classes_, range(len(encoder.classes_))):
+    for enc, kec in enumerate(encoder.classes_):
         X = pd.DataFrame({
             "tahun": [tahun],
             "kecamatan_encoded": [enc]
@@ -87,7 +89,6 @@ if st.button("📊 Prediksi Sekarang"):
         columns=["Kecamatan", "Prediksi Timbulan"]
     )
 
-    # ================= RANKING =================
     df = df.sort_values(
         by="Prediksi Timbulan",
         ascending=False
@@ -95,7 +96,6 @@ if st.button("📊 Prediksi Sekarang"):
 
     df["Ranking"] = df.index + 1
 
-    # ================= PRIORITAS =================
     q75 = df["Prediksi Timbulan"].quantile(0.75)
     q50 = df["Prediksi Timbulan"].quantile(0.50)
 
@@ -111,7 +111,6 @@ if st.button("📊 Prediksi Sekarang"):
 
     fokus = df[df["Kecamatan"] == kecamatan_fokus].iloc[0]
 
-    # ================= OUTPUT FOKUS =================
     st.markdown("### 📍 Kecamatan Fokus")
     st.success(
         f"""
@@ -122,13 +121,9 @@ if st.button("📊 Prediksi Sekarang"):
         """
     )
 
-    # ================= TABEL =================
     st.markdown("### 📋 Daftar Prioritas Seluruh Kecamatan")
 
-    # Penomoran tabel mulai dari 1
     df.index = df.index + 1
-
     st.dataframe(df, use_container_width=True)
 
 st.markdown('</div>', unsafe_allow_html=True)
-
