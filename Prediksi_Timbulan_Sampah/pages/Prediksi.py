@@ -21,12 +21,18 @@ else:
 @st.cache_resource
 def load_assets():
     try:
-        model = joblib.load("models/model_lr_sampah.pkl")
-        encoder = joblib.load("models/encoder_kecamatan.pkl")
+        BASE_DIR = Path(__file__).parent.parent  # naik ke root project
+        model_path = BASE_DIR / "models" / "model_lr_sampah.pkl"
+        encoder_path = BASE_DIR / "models" / "encoder_kecamatan.pkl"
+
+        model = joblib.load(model_path)
+        encoder = joblib.load(encoder_path)
+
         return model, encoder
     except Exception as e:
         st.error(f"Gagal load model: {e}")
         return None, None
+
 
 model, encoder = load_assets()
 
@@ -127,3 +133,4 @@ if st.button("📊 Prediksi Sekarang"):
     st.dataframe(df, use_container_width=True)
 
 st.markdown('</div>', unsafe_allow_html=True)
+
