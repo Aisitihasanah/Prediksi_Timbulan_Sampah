@@ -8,42 +8,42 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# ================= LOAD CSS =================
 css_file = Path(__file__).parent / "style.css"
 if css_file.exists():
     st.markdown(
         f"<style>{css_file.read_text()}</style>",
         unsafe_allow_html=True
     )
+else:
+    st.warning("style.css tidak ditemukan")
 
-# ================= HERO IMAGE =================
 BASE_DIR = Path(__file__).resolve().parent
 hero_image_path = BASE_DIR / "assets" / "hero.png"
-
-st.markdown('<div class="hero-container">', unsafe_allow_html=True)
 
 if hero_image_path.exists():
     encoded_image = base64.b64encode(hero_image_path.read_bytes()).decode()
 
     st.markdown(
         f"""
-        <img src="data:image/png;base64,{encoded_image}" class="hero-img"/>
-        <div class="hero-overlay"></div>
-        <div class="hero-text">
-            <h1>Prioritas Penanganan Sampah<br>Kota Tasikmalaya</h1>
-            <p>
-                Sistem prediksi timbulan sampah berbasis Machine Learning
-                untuk menentukan prioritas penanganan sampah di setiap
-                kecamatan di Kota Tasikmalaya secara objektif dan terukur.
-            </p>
+        <div class="hero-container">
+            <img src="data:image/jpg;base64,{encoded_image}" class="hero-img"/>
+            <div class="hero-overlay"></div>
+            <div class="hero-text">
+                 <h1>Prioritas Penanganan Sampah<br>Kota Tasikmalaya</h1>
+                <p>
+                    Sistem prediksi timbulan sampah berbasis Machine Learning
+                    untuk menentukan prioritas penanganan sampah di setiap
+                    kecamatan di Kota Tasikmalaya secara objektif dan terukur.
+                </p>
+                <a href="Prediksi" class="hero-btn">Mulai Prediksi</a>
+            </div>
         </div>
         """,
         unsafe_allow_html=True
     )
-
 else:
-    st.error("File hero.png tidak ditemukan di folder assets/")
-
+    st.error("File hero.jpg tidak ditemukan di folder assets/")
+    
 # ================= HERO BUTTON =================
 if st.button("🚀 Mulai Prediksi"):
     st.switch_page("pages/prediksi.py")
@@ -149,6 +149,7 @@ with c3:
         </div>
     """, unsafe_allow_html=True)
     
+
 
 
 
