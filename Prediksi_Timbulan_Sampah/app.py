@@ -43,12 +43,6 @@ if hero_image_path.exists():
     )
 else:
     st.error("File hero.jpg tidak ditemukan di folder assets/")
-    
-# ================= HERO BUTTON =================
-if st.button("🚀 Mulai Prediksi"):
-    st.switch_page("pages/prediksi.py")
-
-st.markdown('</div>', unsafe_allow_html=True)
 
 
 # ================= PROBLEM =================
@@ -149,6 +143,7 @@ with c3:
         </div>
     """, unsafe_allow_html=True)
     
+
 
 
 
