@@ -6,7 +6,8 @@
     background-color: #0e3118; 
     color: #ffffff;
 }
-
+.body{
+    size : absolute;}
 h1, h2 {
     color: #ffffff !important;
 }
@@ -266,4 +267,5 @@ h1, h2 {
         gap: 1rem;
     }
 }
+
 
