@@ -248,17 +248,13 @@ st-emotion-cache-pk3c77 p {
  @media (max-width: 768px) {
 
     /* HERO CONTAINER */
-    .hero-container {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start !important;
-
+.hero-container {
+        height: auto;
         padding: 1.5rem 1.2rem 2rem;
-        border-radius: 18px;
-        margin: 0;
-        gap: 1.5rem;
+        border-radius: 16px;
+        margin-bottom: 3rem;
+    border-radius: 18px;
     }
-
     /* HERO IMAGE */
     .hero-img {
         width: 100%;
@@ -299,5 +295,6 @@ st-emotion-cache-pk3c77 p {
         gap: 1rem;
     }
 }
+
 
 
