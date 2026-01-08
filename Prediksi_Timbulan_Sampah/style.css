@@ -301,24 +301,19 @@ st-emotion-cache-pk3c77 p {
         margin: 0 0 1.2rem 0;
     }
 
-  /* HERO BUTTON (MULAI PREDIKSI) */
+
 .hero-btn {
     display: inline-block;
-    padding: 0.7rem 1.8rem;
-    font-size: 0.95rem;
-    font-weight: 800;
-
-    background: linear-gradient(135deg, #facc15, #f59e0b);
-    color: #1f2937;
-
-    border-radius: 999px;
-    border: none;
+    background-color: #ffb800;
+    color: #000 !important;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    font-weight: 700;
     text-decoration: none;
-
-    box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+    transition: 0.3s;
 }
 
 .hero-btn:hover {
-    transform: translateY(-2px);
-}
-
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 184, 0, 0.4);
+}}
