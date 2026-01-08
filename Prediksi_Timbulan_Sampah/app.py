@@ -28,7 +28,7 @@ if hero_image_path.exists():
             <img src="data:image/jpg;base64,{encoded_image}" class="hero-img"/>
             <div class="hero-overlay"></div>
             <div class="hero-text">
-               <h1>Prioritas Penanganan Sampah<br>Kota Tasikmalaya</h1>
+                 <h1>Prioritas Penanganan Sampah<br>Kota Tasikmalaya</h1>
                 <p>
                     Sistem prediksi timbulan sampah berbasis Machine Learning
                     untuk menentukan prioritas penanganan sampah di setiap
@@ -40,6 +40,8 @@ if hero_image_path.exists():
         """,
         unsafe_allow_html=True
     )
+else:
+    st.error("File hero.jpg tidak ditemukan di folder assets/")
 
 # ================= PROBLEM =================
 st.markdown("## Permasalahan yang Dihadapi")
@@ -65,7 +67,18 @@ with col1:
     )
 
 with col2:
-    st.image("assets/problem3.png", use_container_width=True)
+    import os
+
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    img_path = os.path.join(BASE_DIR, "assets", "problem2.png")
+
+    if os.path.exists(img_path):
+        st.image(img_path, use_container_width=True)
+    else:
+        st.warning("Gambar problem3.png tidak ditemukan")
+
+st.markdown("<h2 style='text-align: center; margin-bottom: 2rem;'>Our Solutions</h2>", unsafe_allow_html=True)
+
 
 # ================= SOLUTION =================
 st.markdown(
@@ -76,13 +89,16 @@ st.markdown(
 c1, c2, c3 = st.columns(3)
 
 def get_base64_img(path):
+    if not os.path.exists(path):
+        return ""
     with open(path, "rb") as f:
-        data = f.read()
-    return base64.b64encode(data).decode()
+        return base64.b64encode(f.read()).decode()
 
-img1 = f"data:image/png;base64,{get_base64_img('assets/solution1.png')}"
-img2 = f"data:image/png;base64,{get_base64_img('assets/solution2.png')}"
-img3 = f"data:image/png;base64,{get_base64_img('assets/solution3.png')}"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+img1 = f"data:image/png;base64,{get_base64_img(os.path.join(BASE_DIR,'assets','solution1.png'))}"
+img2 = f"data:image/png;base64,{get_base64_img(os.path.join(BASE_DIR,'assets','solution2.png'))}"
+img3 = f"data:image/png;base64,{get_base64_img(os.path.join(BASE_DIR,'assets','solution3.png'))}"
 
 with c1:
     st.markdown(f"""
@@ -127,4 +143,5 @@ with c3:
         </div>
     """, unsafe_allow_html=True)
     
+
 
