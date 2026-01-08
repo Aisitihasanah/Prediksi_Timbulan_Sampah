@@ -22,7 +22,7 @@ h1, h2 {
 
 .hero-img {
     width: 100%;
-    height: 100%;
+    height: 500px;
     border-radius: 30px;
     object-fit: cover;
 }
@@ -225,7 +225,7 @@ h1, h2 {
     white-space: nowrap;
     text-overflow: ellipsis;
     display: table-cell;
-    color: rgb(0, 0, 0);
+    color: black;
 }
 .st-emotion-cache-16tyu1 p {
     word-break: break-word;
@@ -285,6 +285,7 @@ h1, h2 {
         gap: 1rem;
     }
 }
+
 
 
 
