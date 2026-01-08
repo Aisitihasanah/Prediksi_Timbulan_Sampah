@@ -246,11 +246,32 @@ st-emotion-cache-pk3c77 p {
 
 @media (max-width: 768px) {
 
+ @media (max-width: 768px) {
+
+    /* HERO CONTAINER */
     .hero-container {
-        height: auto;
-        padding: 2rem 1.5rem;
-        border-radius: 16px;
-        margin-bottom: 3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start !important;
+
+        padding: 1.5rem 1.2rem 2rem;
+        border-radius: 18px;
+        margin: 0;
+        gap: 1.5rem;
+    }
+
+    /* HERO IMAGE */
+    .hero-img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 14px;
+        display: block;
+    }
+
+    /* MATIKAN SEMUA OVERLAY & POSITIONING */
+    .hero-overlay {
+        display: none !important;
     }
 
     .hero-text {
@@ -284,3 +305,4 @@ st-emotion-cache-pk3c77 p {
         gap: 1rem;
     }
 }
+
