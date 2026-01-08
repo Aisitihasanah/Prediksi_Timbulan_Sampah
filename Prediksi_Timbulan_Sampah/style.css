@@ -302,18 +302,22 @@ st-emotion-cache-pk3c77 p {
     }
 
 
-.hero-btn {
-    display: inline-block;
-    background-color: #ffb800;
-    color: #000 !important;
-    padding: 1rem 2.5rem;
-    border-radius: 50px;
-    font-weight: 700;
-    text-decoration: none;
-    transition: 0.3s;
+/* HERO BUTTON STREAMLIT */
+.hero-container div[data-testid="stButton"] > button {
+    background: linear-gradient(135deg, #facc15, #f59e0b) !important;
+    color: #1f2937 !important;
+
+    font-size: 0.95rem;
+    font-weight: 800;
+
+    padding: 0.75rem 1.8rem;
+    border-radius: 999px;
+
+    border: none;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    margin-top: 1.2rem;
 }
 
-.hero-btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(255, 184, 0, 0.4);
-}}
+.hero-container div[data-testid="stButton"] > button:hover {
+    transform: translateY(-2px);
+}
