@@ -3,30 +3,29 @@ import joblib
 import pandas as pd
 from pathlib import Path
 
-# ================= CONFIG =================
-st.set_page_config(
-    page_title="Prediksi Prioritas Sampah",
-    layout="wide",
-    initial_sidebar_state="collapsed"
-)
+css_file = Path(__file__).parent.parent / "style.css"
 
-# ================= LOAD CSS =================
-def load_css():
-    if Path("style.css").exists():
-        with open("style.css") as f:
-            st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+if css_file.exists():
+    st.markdown(
+        f"<style>{css_file.read_text()}</style>",
+        unsafe_allow_html=True
+    )
+else:
+    st.warning("style.css tidak ditemukan")
 
-load_css()
 
-# ================= LOAD MODEL =================
 @st.cache_resource
 def load_assets():
+    try:
+        BASE_DIR = Path(__file__).parent.parent
     model = joblib.load("models/model_lr_sampah.pkl")
     encoder = joblib.load("models/encoder_kecamatan.pkl")
     return model, encoder
+    except Exception as e:
+        st.error(f"Gagal load model: {e}")
+        return None, None, None
 
 model, encoder = load_assets()
-
 # ================= BACK BUTTON =================
 if st.button("⬅\nKembali"):
     st.switch_page("app.py")
@@ -132,3 +131,4 @@ if st.button("📊 Prediksi Sekarang"):
     st.dataframe(df, use_container_width=True)
 
 st.markdown('</div>', unsafe_allow_html=True)
+
