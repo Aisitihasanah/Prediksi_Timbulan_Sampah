@@ -301,23 +301,30 @@ st-emotion-cache-pk3c77 p {
         margin: 0 0 1.2rem 0;
     }
 
-    /* BUTTON */
     .hero-btn {
-        align-self: flex-start;
-        padding: 0.7rem 1.6rem;
+        padding: 0.7rem 1.8rem;
         font-size: 0.95rem;
-        font-weight: 800;
-        border-radius: 999px;
     }
 
-    /* RESULT CARD */
+    div[data-testid="column"] {
+        width: 100% !important;
+        flex: 1 1 100% !important;
+        max-width: 100% !important;
+    }
+
+    .card-container {
+        margin-bottom: 1.2rem;
+    }
+
+    .card-img {
+        height: 160px;
+        object-fit: cover;
+    }
+
     .result-card {
         flex-direction: column;
         align-items: flex-start;
         gap: 1rem;
     }
 }
-
-
-
 
