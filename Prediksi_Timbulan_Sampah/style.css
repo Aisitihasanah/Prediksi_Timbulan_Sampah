@@ -241,6 +241,8 @@ st-emotion-cache-pk3c77 p {
     margin-right: 0px;
     color: white;
 }
+.st-emotion-cache-pk3c77{
+    color: white;}
 
 @media (max-width: 768px) {
 
@@ -293,6 +295,7 @@ st-emotion-cache-pk3c77 p {
         gap: 1rem;
     }
 }
+
 
 
 
