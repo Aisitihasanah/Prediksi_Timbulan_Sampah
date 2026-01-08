@@ -234,6 +234,14 @@ h1, h2 {
     margin-right: 0px;
     color: white;
 }
+st-emotion-cache-pk3c77 p {
+    word-break: break-word;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    color: white;
+}
+
 @media (max-width: 768px) {
 
     .hero-container {
@@ -285,6 +293,7 @@ h1, h2 {
         gap: 1rem;
     }
 }
+
 
 
 
