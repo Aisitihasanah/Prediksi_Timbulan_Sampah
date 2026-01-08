@@ -18,7 +18,7 @@ else:
     st.warning("style.css tidak ditemukan")
 
 BASE_DIR = Path(__file__).resolve().parent
-hero_image_path = BASE_DIR / "assets" / "hero3.png"
+hero_image_path = BASE_DIR / "assets" / "hero.png"
 
 if hero_image_path.exists():
     encoded_image = base64.b64encode(hero_image_path.read_bytes()).decode()
@@ -144,6 +144,7 @@ with c3:
         </div>
     """, unsafe_allow_html=True)
     
+
 
 
 
