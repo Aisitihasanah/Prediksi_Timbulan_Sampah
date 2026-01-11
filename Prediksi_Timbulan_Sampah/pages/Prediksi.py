@@ -4,7 +4,7 @@ import pandas as pd
 from pathlib import Path
 
 st.set_page_config(
-    page_title="Prediksi Prioritas Sampah",
+    page_title="Prediksi Timbulan Sampah",
     layout="wide"
 )
 
@@ -45,7 +45,7 @@ if st.button("⬅ Kembali"):
 st.markdown(
     """
     <h1 style="color:#ffb800; font-size:3rem; font-weight:800;">
-        Prediksi Prioritas Penanganan Sampah
+        Prediksi Timbulan Sampah
     </h1>
     <p style="color:white; opacity:0.85;">
         Sistem ini memprediksi timbulan sampah tiap kecamatan di Kota Tasikmalaya
@@ -133,4 +133,5 @@ if st.button("📊 Prediksi Sekarang"):
     st.dataframe(df, use_container_width=True)
 
 st.markdown('</div>', unsafe_allow_html=True)
+
 
