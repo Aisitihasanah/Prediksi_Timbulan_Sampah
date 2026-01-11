@@ -9,35 +9,17 @@ st.set_page_config(
 )
 
 css_file = Path(__file__).parent.parent / "style.css"
-
 if css_file.exists():
-    st.markdown(
-        f"<style>{css_file.read_text()}</style>",
-        unsafe_allow_html=True
-    )
-else:
-    st.warning("style.css tidak ditemukan")
+    st.markdown(f"<style>{css_file.read_text()}</style>", unsafe_allow_html=True)
 
 @st.cache_resource
 def load_assets():
-    try:
-        BASE_DIR = Path(__file__).parent.parent  # naik ke root project
-        model_path = BASE_DIR / "models" / "model_lr_sampah.pkl"
-        encoder_path = BASE_DIR / "models" / "encoder_kecamatan.pkl"
-
-        model = joblib.load(model_path)
-        encoder = joblib.load(encoder_path)
-
-        return model, encoder
-    except Exception as e:
-        st.error(f"Gagal load model: {e}")
-        return None, None
-
+    BASE_DIR = Path(__file__).parent.parent
+    model = joblib.load(BASE_DIR / "models" / "model_lr_sampah.pkl")
+    encoder = joblib.load(BASE_DIR / "models" / "encoder_kecamatan.pkl")
+    return model, encoder
 
 model, encoder = load_assets()
-
-if model is None or encoder is None:
-    st.stop()
 
 if st.button("⬅ Kembali"):
     st.switch_page("app.py")
@@ -48,8 +30,8 @@ st.markdown(
         Prediksi Timbulan Sampah
     </h1>
     <p style="color:white; opacity:0.85;">
-        Sistem ini memprediksi timbulan sampah tiap kecamatan di Kota Tasikmalaya
-        menggunakan metode <b>Linear Regression</b> untuk menentukan prioritas penanganan.
+        Sistem prediksi timbulan sampah tiap kecamatan di Kota Tasikmalaya
+        menggunakan metode <b>Linear Regression</b>.
     </p>
     """,
     unsafe_allow_html=True
@@ -95,6 +77,7 @@ if st.button("📊 Prediksi Sekarang"):
         columns=["Kecamatan", "Prediksi Timbulan"]
     )
 
+    # Ranking
     df = df.sort_values(
         by="Prediksi Timbulan",
         ascending=False
@@ -102,6 +85,7 @@ if st.button("📊 Prediksi Sekarang"):
 
     df["Ranking"] = df.index + 1
 
+    # Prioritas
     q75 = df["Prediksi Timbulan"].quantile(0.75)
     q50 = df["Prediksi Timbulan"].quantile(0.50)
 
@@ -120,19 +104,28 @@ if st.button("📊 Prediksi Sekarang"):
     st.markdown("### Kecamatan Fokus")
     st.success(
         f"""
-        Kecamatan : {fokus['Kecamatan']}
-        \nPrediksi Timbulan : {fokus['Prediksi Timbulan']:.2f}
-        \nPrioritas : {fokus['Prioritas']}
-        \nRanking : {fokus['Ranking']} dari {len(df)} kecamatan
+        Kecamatan : **{fokus['Kecamatan']}**
+        \nPrediksi Timbulan : **{fokus['Prediksi Timbulan']:.2f}**
+        \nPrioritas : **{fokus['Prioritas']}**
+        \nRanking : **{fokus['Ranking']}** dari {len(df)} kecamatan
         """
     )
 
     st.markdown("### Daftar Prioritas Seluruh Kecamatan")
 
+    # Highlight kecamatan fokus
+    def highlight_kecamatan(row):
+        if row["Kecamatan"] == kecamatan_fokus:
+            return [
+                "font-weight: bold; background-color: rgba(255,184,0,0.25);"
+            ] * len(row)
+        return [""] * len(row)
+
     df.index = df.index + 1
-    st.dataframe(df, use_container_width=True)
+
+    st.dataframe(
+        df.style.apply(highlight_kecamatan, axis=1),
+        use_container_width=True
+    )
 
 st.markdown('</div>', unsafe_allow_html=True)
-
-
-
