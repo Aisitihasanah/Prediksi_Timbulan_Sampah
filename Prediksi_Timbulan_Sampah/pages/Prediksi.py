@@ -117,7 +117,7 @@ if st.button("📊 Prediksi Sekarang"):
 
     fokus = df[df["Kecamatan"] == kecamatan_fokus].iloc[0]
 
-    st.markdown("### 📍 Kecamatan Fokus")
+    st.markdown("### Kecamatan Fokus")
     st.success(
         f"""
         Kecamatan : {fokus['Kecamatan']}
@@ -127,11 +127,12 @@ if st.button("📊 Prediksi Sekarang"):
         """
     )
 
-    st.markdown("### 📋 Daftar Prioritas Seluruh Kecamatan")
+    st.markdown("### Daftar Prioritas Seluruh Kecamatan")
 
     df.index = df.index + 1
     st.dataframe(df, use_container_width=True)
 
 st.markdown('</div>', unsafe_allow_html=True)
+
 
 
