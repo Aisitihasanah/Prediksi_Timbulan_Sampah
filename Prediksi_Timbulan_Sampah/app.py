@@ -3,7 +3,7 @@ from pathlib import Path
 import base64
 
 st.set_page_config(
-    page_title="Hate Comment Detection",
+    page_title="Prediksi Timbulan Sampah",
     layout="wide",
     initial_sidebar_state="collapsed"
 )
@@ -29,7 +29,7 @@ if hero_image_path.exists():
             <img src="data:image/jpg;base64,{encoded_image}" class="hero-img"/>
             <div class="hero-overlay"></div>
             <div class="hero-text">
-                 <h1>Prioritas Penanganan Sampah<br>Kota Tasikmalaya</h1>
+                 <h1>Prediksi<br>Timbulan Sampah Kecamatan<br>Kota Tasikmalaya</h1>
                 <p>
                     Sistem prediksi timbulan sampah berbasis Machine Learning
                     untuk menentukan prioritas penanganan sampah di setiap
@@ -54,15 +54,13 @@ with col1:
     st.markdown(
         """
         <p class="problem-text">
-        Peningkatan jumlah penduduk dan aktivitas masyarakat di Kota Tasikmalaya
-        menyebabkan volume timbulan sampah yang terus meningkat setiap tahunnya.
-        Permasalahan utama yang dihadapi adalah keterbatasan sumber daya dalam
-        penanganan sampah, sehingga diperlukan penentuan prioritas penanganan
-        yang tepat pada setiap kecamatan. Tanpa pendekatan berbasis data,
-        pengambilan keputusan berpotensi menjadi kurang efektif dan tidak merata.
-        Oleh karena itu, diperlukan sistem prediksi timbulan sampah yang mampu
-        membantu pemerintah daerah dalam menentukan prioritas penanganan sampah
-        secara lebih terukur dan berbasis data historis.
+        Peningkatan jumlah penduduk dan aktivitas masyarakat di Kota Tasikmalaya 
+        menyebabkan timbulan sampah terus meningkat dan berbeda pada setiap kecamatan. 
+        Namun, data timbulan sampah yang tersedia masih dimanfaatkan secara historis 
+        dan belum digunakan untuk mendukung perencanaan serta penentuan prioritas 
+        penanganan sampah secara objektif. Kondisi ini berpotensi menyebabkan pengelolaan 
+        sampah yang kurang efektif, sehingga diperlukan sistem prediksi timbulan sampah 
+        berbasis data historis untuk membantu menentukan prioritas penanganan sampah secara lebih terukur.
         </p>
         """,
         unsafe_allow_html=True
@@ -105,11 +103,10 @@ with c1:
         <div class="card-container">
             <img src="{img1}" class="card-img"/>
             <div class="card-content">
-                <h3>Prediction & Ranking</h3>
+                <h3>Prediction & Analysis</h3>
                 <p>
-                Menyediakan hasil prediksi timbulan sampah pada setiap kecamatan
-                beserta peringkat prioritas penanganannya berdasarkan metode
-                Linear Regression.
+                Memprediksi jumlah timbulan sampah pada setiap kecamatan di Kota Tasikmalaya 
+                berdasarkan data historis menggunakan metode Linear Regression.
                 </p>
             </div>
         </div>
@@ -120,10 +117,10 @@ with c2:
         <div class="card-container">
             <img src="{img2}" class="card-img"/>
             <div class="card-content">
-                <h3>Decision Support</h3>
+                <h3>Priority Determination</h3>
                 <p>
-                Mendukung pengambilan keputusan dalam penanganan sampah melalui
-                analisis data historis dan prediksi berbasis Machine Learning.
+               Menentukan peringkat prioritas penanganan sampah pada setiap kecamatan berdasarkan 
+               hasil prediksi timbulan sampah secara objektif dan terukur
                 </p>
             </div>
         </div>
@@ -134,15 +131,16 @@ with c3:
         <div class="card-container">
             <img src="{img3}" class="card-img"/>
             <div class="card-content">
-                <h3>User Friendly</h3>
+                <h3>Decision Support System</h3>
                 <p>
-                Antarmuka sistem dirancang sederhana dan intuitif sehingga mudah
-                digunakan oleh pengguna untuk melihat hasil prediksi dan prioritas.
+                Menyediakan sistem sederhana yang menampilkan hasil prediksi dan rekomendasi prioritas 
+                penanganan sampah untuk mendukung pengambilan keputusan pemerintah daerah.
                 </p>
             </div>
         </div>
     """, unsafe_allow_html=True)
     
+
 
 
 
