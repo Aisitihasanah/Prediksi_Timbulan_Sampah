@@ -29,7 +29,7 @@ if hero_image_path.exists():
             <img src="data:image/jpg;base64,{encoded_image}" class="hero-img"/>
             <div class="hero-overlay"></div>
             <div class="hero-text">
-                 <h1>Prediksi<br>Timbulan Sampah Kecamatan<br>Kota Tasikmalaya</h1>
+                 <h1>Prediksi Timbulan Sampah<br>Kota Tasikmalaya</h1>
                 <p>
                     Sistem prediksi timbulan sampah berbasis Machine Learning
                     untuk menentukan prioritas penanganan sampah di setiap
@@ -131,7 +131,7 @@ with c3:
         <div class="card-container">
             <img src="{img3}" class="card-img"/>
             <div class="card-content">
-                <h3>Decision Support System</h3>
+                <h3>Decision Support</h3>
                 <p>
                 Menyediakan sistem sederhana yang menampilkan hasil prediksi dan rekomendasi prioritas 
                 penanganan sampah untuk mendukung pengambilan keputusan pemerintah daerah.
@@ -140,6 +140,7 @@ with c3:
         </div>
     """, unsafe_allow_html=True)
     
+
 
 
 
