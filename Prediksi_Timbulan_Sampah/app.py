@@ -54,13 +54,15 @@ with col1:
     st.markdown(
         """
         <p class="problem-text">
-        Peningkatan jumlah penduduk dan aktivitas masyarakat di Kota Tasikmalaya 
-        menyebabkan timbulan sampah terus meningkat dan berbeda pada setiap kecamatan. 
-        Namun, data timbulan sampah yang tersedia masih dimanfaatkan secara historis 
-        dan belum digunakan untuk mendukung perencanaan serta penentuan prioritas 
-        penanganan sampah secara objektif. Kondisi ini berpotensi menyebabkan pengelolaan 
-        sampah yang kurang efektif, sehingga diperlukan sistem prediksi timbulan sampah 
-        berbasis data historis untuk membantu menentukan prioritas penanganan sampah secara lebih terukur.
+       Peningkatan jumlah penduduk dan aktivitas masyarakat di Kota Tasikmalaya 
+       menyebabkan timbulan sampah terus meningkat dan berbeda pada setiap kecamatan. 
+       Namun, data timbulan sampah yang tersedia masih dimanfaatkan secara historis dan 
+       belum digunakan untuk mendukung perencanaan serta penentuan prioritas penanganan sampah secara objektif. 
+       Kondisi ini berpotensi menyebabkan pengelolaan sampah yang kurang efektif, 
+       sehingga diperlukan sistem prediksi timbulan sampah berbasis data historis untuk membantu 
+       menentukan prioritas penanganan sampah secara lebih terukur. Pemanfaatan pendekatan 
+       machine learning diharapkan dapat memberikan dukungan pengambilan keputusan yang lebih akurat dan 
+       tepat sasaran bagi pemerintah daerah.
         </p>
         """,
         unsafe_allow_html=True
@@ -140,6 +142,7 @@ with c3:
         </div>
     """, unsafe_allow_html=True)
     
+
 
 
 
