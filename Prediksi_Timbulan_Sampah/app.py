@@ -60,8 +60,8 @@ with col1:
        belum digunakan untuk mendukung perencanaan serta penentuan prioritas penanganan sampah secara objektif. 
        Kondisi ini berpotensi menyebabkan pengelolaan sampah yang kurang efektif, 
        sehingga diperlukan sistem prediksi timbulan sampah berbasis data historis untuk membantu 
-       menentukan prioritas penanganan sampah secara lebih terukur. Pemanfaatan pendekatan 
-       machine learning diharapkan dapat memberikan dukungan pengambilan keputusan yang lebih akurat dan 
+       menentukan prioritas penanganan sampah secara lebih terukur. Pemanfaatan ini 
+       diharapkan dapat memberikan dukungan pengambilan keputusan yang lebih akurat dan 
        tepat sasaran bagi pemerintah daerah.
         </p>
         """,
@@ -142,6 +142,7 @@ with c3:
         </div>
     """, unsafe_allow_html=True)
     
+
 
 
 
