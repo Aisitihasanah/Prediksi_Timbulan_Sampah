@@ -134,12 +134,13 @@ with c3:
                 <h3>Decision Support</h3>
                 <p>
                 Menyediakan sistem sederhana yang menampilkan hasil prediksi dan rekomendasi prioritas 
-                penanganan sampah untuk mendukung pengambilan keputusan pemerintah daerah.
+                penanganan sampah untuk mendukung pengambilan keputusan.
                 </p>
             </div>
         </div>
     """, unsafe_allow_html=True)
     
+
 
 
 
