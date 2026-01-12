@@ -79,7 +79,6 @@ with col2:
         st.warning("Gambar problem3.png tidak ditemukan")
 
 
-# ================= SOLUTION =================
 st.markdown(
     "<h2 style='text-align: center; margin-bottom: 2rem;'>Solusi yang Ditawarkan</h2>",
     unsafe_allow_html=True
@@ -141,6 +140,7 @@ with c3:
         </div>
     """, unsafe_allow_html=True)
     
+
 
 
 
