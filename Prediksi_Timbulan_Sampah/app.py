@@ -45,7 +45,6 @@ else:
     st.error("File hero.jpg tidak ditemukan di folder assets/")
 
 
-# ================= PROBLEM =================
 st.markdown("## Permasalahan yang Dihadapi")
 
 col1, col2 = st.columns([1, 1], gap="large")
@@ -142,6 +141,7 @@ with c3:
         </div>
     """, unsafe_allow_html=True)
     
+
 
 
 
