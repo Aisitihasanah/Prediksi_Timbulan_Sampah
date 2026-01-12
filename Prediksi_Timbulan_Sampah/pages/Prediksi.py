@@ -60,7 +60,7 @@ with col2:
         encoder.classes_
     )
 
-if st.button("📊 Prediksi Sekarang"):
+if st.button("Prediksi Sekarang"):
 
     hasil = []
 
@@ -129,3 +129,4 @@ if st.button("📊 Prediksi Sekarang"):
     )
 
 st.markdown('</div>', unsafe_allow_html=True)
+
